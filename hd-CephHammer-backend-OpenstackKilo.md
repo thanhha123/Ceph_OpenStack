@@ -19,8 +19,8 @@ Chuẩn bị môi trường:
 ####C.1. Truy cập bằng tài khoản root vào máy các máy chủ và tải các gói, script chuẩn bị cho quá trình cài đặt
 	yum update -y
 	yum install git -y
-	git clone https://github.com/longsube/CEPH_3Net_Openstack
-	mv CEPH_3Net_Openstack/Install_CephHammer_3node/ Install_CephHammer_3node/
+	git clone https://github.com/longsube/Ceph_OpenStack
+	mv https://github.com/longsube/Ceph_OpenStack/Install_CephHammer_3node/
 	rm -rf CEPH_3Net_Openstack/
 	cd Install_CephHammer_3node/
 	chmod +x *.sh
@@ -31,7 +31,9 @@ Sửa các thông số sau:
 - IP các dải Local, External, Public của các node
 - Password root của các node
 - Các disk để sử dụng làm OSD của các node
-- FSID: để sử dụng cho việc xác thực giữa các dịch vụ của Ceph
+- Chọn phiên bản Ceph cài đặt (mặc định là Hammer)
+- FSID: để sử dụng cho việc xác thực giữa các dịch vụ của Ceph (sử dụng lênh '''uuidgen''')
+- SECRET KEY: để add cho client.conder sử dụng libvirt (sử dụng lênh '''uuidgen''')
 ```
 	#Hostname
 	HOST1=ceph1
