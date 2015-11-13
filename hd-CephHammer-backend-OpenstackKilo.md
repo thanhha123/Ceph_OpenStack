@@ -27,7 +27,7 @@ Chuẩn bị môi trường:
 
 #### C.2. Cấu hình file config.cfg
 Sửa các thông số sau:
-- Hostname của các node
+- **Hostname** của các node
 - **IP** các dải Local, External, Public của các node
 - **Password root** của các node
 - **Disk** để sử dụng làm OSD của các node
