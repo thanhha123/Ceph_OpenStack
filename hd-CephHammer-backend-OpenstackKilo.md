@@ -71,50 +71,50 @@ Sửa các thông số sau:
 #### C.3. Cấu hình NIC, Hostname, update
 Truy cập bằng quyền root vào các node 1, 2 ,3 và thực hiện tương ứng với từng node:
 ```
-	cd /root/Install_CephHammer_3node/
-    bash 01.prepare_node1.sh
-    bash 01.prepare_node1.sh
-    bash 01.prepare_node1.sh
+cd /root/Install_CephHammer_3node/
+bash 01.prepare_node1.sh
+bash 01.prepare_node1.sh
+bash 01.prepare_node1.sh
 ```
 Sau bước này, các node sẽ khởi động lại
 	
 #### C.4. Cài đặt các package của Ceph
 Sau khi các node đã khởi động lên, truy cập vào node ceph1 với quyền root
 ```
-	cd /root/Install_CephHammer_3node/
-	bash 04.install_Ceph_packages.sh
+cd /root/Install_CephHammer_3node/
+bash 04.install_Ceph_packages.sh
 ```
 
 #### C.5. Cài đặt Ceph monitor trên các node
-	bash 05.deploy_monitor.sh
+```bash 05.deploy_monitor.sh```
     
 #### C.6. Cài đặt Ceph OSD trên các node
-    bash 06.deploy_OSD.sh
+```bash 06.deploy_OSD.sh```
 
 ###D.Tích hợp Ceph với OpenStack
 Các node OpenStack cho phép ssh với quyền root
 ####D.1: Trên node Ceph1
 Thực hiện việc tạo các pool cho Cinder, Glance, Nova
 
-	bash 07.create_pool.sh
+```bash 07.create_pool.sh```
 	
 ####D.2 Trên node Ceph1
 Thực hiện việc tạo các keyring cho Cinder, Glance
 
-	bash 08.Add_keyring_controller.sh
+```bash 08.Add_keyring_controller.sh```
 	
 ####D.3 Trên node Ceph1
 Thực hiện việc tạo các keyring cho Nova
 
-	bash 09.Add_keyring_compute.sh
+```bash 09.Add_keyring_compute.sh```
 	
 ####D.4 Trên node Controller
 Thực hiện việc tải các package Ceph và cấu hình Glance, Cinder trên node Controller
 
-	bash 10.ctl_ceph.sh
+```bash 10.ctl_ceph.sh```
 	
 ####D.5 Trên các node Compute
 Thực hiện việc tải các package Ceph và cấu hình Nova
 
-	bash 11.com_ceph.sh
+```bash 11.com_ceph.sh```
 	
