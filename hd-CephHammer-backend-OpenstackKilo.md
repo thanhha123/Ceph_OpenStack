@@ -92,6 +92,7 @@ bash 04.install_Ceph_packages.sh
 ```bash 06.deploy_OSD.sh```
 
 ###D.Tích hợp Ceph với OpenStack
+Các node OpenStack cho phép ssh với quyền root
 
 ####D.1 Trên node Ceph1
 Thực hiện việc tạo các pool cho Cinder, Glance, Nova
