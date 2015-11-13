@@ -80,9 +80,11 @@ Sau bước này, các node sẽ khởi động lại
 	
 #### C.4. Cài đặt các package của Ceph
 Sau khi các node đã khởi động lên, truy cập vào node ceph1 với quyền root
+```
 	cd /root/Install_CephHammer_3node/
 	bash 04.install_Ceph_packages.sh
-	
+```
+
 #### C.5. Cài đặt Ceph monitor trên các node
 	bash 05.deploy_monitor.sh
     
