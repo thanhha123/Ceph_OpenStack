@@ -12,7 +12,7 @@ https://github.com/vietstacker/openstack-kilo-multinode-U14.04-v1
 ### C. Cài đặt Ceph
 Chuẩn bị môi trường:
 - 3 máy ảo chạy CentOS 6.5, kernel 2.6.32-504.23.4.el6.x86_64
-- Disable iptables
+- Tắt iptables
 - Các máy ảo có 3 card mạng tương ứng:với các dải mạng Local, External và Replicate
 	
 
@@ -69,7 +69,7 @@ Sửa các thông số sau:
 ....
 
 #### C.3. Cấu hình NIC, Hostname, update
-Truy cập bằng quyền root vào các node 1, 2 ,3 và thực hiện tương ứng với từng node:
+Truy cập bằng quyền root vào các node Ceph1, 2 ,3 và thực hiện tương ứng với từng node:
 ```
 cd /root/Install_CephHammer_3node/
 bash 01.prepare_node1.sh
@@ -79,7 +79,7 @@ bash 01.prepare_node1.sh
 Sau bước này, các node sẽ khởi động lại
 	
 #### C.4. Cài đặt các package của Ceph
-Sau khi các node đã khởi động lên, truy cập vào node ceph1 với quyền root
+Sau khi các node đã khởi động lên, truy cập vào node Ceph1 với quyền root
 ```
 cd /root/Install_CephHammer_3node/
 bash 04.install_Ceph_packages.sh
@@ -93,28 +93,24 @@ bash 04.install_Ceph_packages.sh
 
 ###D.Tích hợp Ceph với OpenStack
 Các node OpenStack cho phép ssh với quyền root
+
 ####D.1: Trên node Ceph1
 Thực hiện việc tạo các pool cho Cinder, Glance, Nova
-
 ```bash 07.create_pool.sh```
 	
 ####D.2 Trên node Ceph1
 Thực hiện việc tạo các keyring cho Cinder, Glance
-
 ```bash 08.Add_keyring_controller.sh```
 	
 ####D.3 Trên node Ceph1
 Thực hiện việc tạo các keyring cho Nova
-
 ```bash 09.Add_keyring_compute.sh```
 	
 ####D.4 Trên node Controller
 Thực hiện việc tải các package Ceph và cấu hình Glance, Cinder trên node Controller
-
 ```bash 10.ctl_ceph.sh```
 	
 ####D.5 Trên các node Compute
 Thực hiện việc tải các package Ceph và cấu hình Nova
-
 ```bash 11.com_ceph.sh```
 	
