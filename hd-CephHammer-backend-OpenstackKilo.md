@@ -28,12 +28,12 @@ Chuẩn bị môi trường:
 #### C.2. Cấu hình file config.cfg
 Sửa các thông số sau:
 - Hostname của các node
-- IP các dải Local, External, Public của các node
-- Password root của các node
-- Các disk để sử dụng làm OSD của các node
-- Chọn phiên bản Ceph cài đặt (mặc định là Hammer)
-- FSID: để sử dụng cho việc xác thực giữa các dịch vụ của Ceph (sử dụng lênh '''uuidgen''')
-- SECRET KEY: để add cho client.conder sử dụng libvirt (sử dụng lênh '''uuidgen''')
+- *IP* các dải Local, External, Public của các node
+- *Password root* của các node
+- *Disk* để sử dụng làm OSD của các node
+- *Phiên bản Ceph* cài đặt (mặc định là Hammer)
+- *FSID*: để sử dụng cho việc xác thực giữa các dịch vụ của Ceph (sử dụng lênh `uuidgen`)
+- *SECRET KEY*: để add cho client.conder sử dụng libvirt (sử dụng lênh `uuidgen`)
 ```
 	#Hostname
 	HOST1=ceph1
